@@ -1,0 +1,12 @@
+#lang racket
+(define (pa a1 n r)
+  (+ a1(* (- n 1) r)))
+
+(pa 26 10 5)
+
+
+;an = a1 . 9 n-1
+(define (pg a1 n)
+  (* a1 (sqr 9 (- n 1))))
+
+(pg 8 5)

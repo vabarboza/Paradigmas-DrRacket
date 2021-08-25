@@ -1,0 +1,15 @@
+#lang racket
+(struct aluno (nome nota))
+
+(define aluno1 (aluno "Ragnar" 8))
+(define aluno2 (aluno "Alrean" 8))
+
+(define lista-alunos (list aluno1 aluno2))
+
+(define (ret-nota lista nome)
+  (cond
+    [(null? lista) "Não encontrado"]
+    [(equal? (aluno-nome (car lista)) nome) (aluno-nota (car lista))]
+    [else (ret-nota (cdr lista) nome)]))
+
+(ret-nota lista-alunos "Joao")

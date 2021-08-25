@@ -1,0 +1,25 @@
+#lang racket
+(require rackunit)
+(require rackunit/text-ui)
+
+;; Numero -> Numero
+;; Calcula o quadrado de X;
+(define quadrado-tests
+  (test-suite
+   "quadrado tests"
+   (check-equal? (quadrado 0) 0)
+   (check-equal? (quadrado 2) 4)
+   (check-equal? (quadrado -3) 9)
+   (check-equal? (quadrado 100) 10000)))
+
+(define (quadrado x)
+  (* x x))
+
+;; Teste ... -> Void
+;; Executa um conjuto de testes.
+(define (executa-testes . testes)
+  (run-tests (test-suite "Todos os testes" testes))
+  (void))
+
+;; Executando teste
+(executa-testes quadrado-tests)
