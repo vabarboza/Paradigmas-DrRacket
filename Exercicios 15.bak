@@ -1,0 +1,13 @@
+#lang racket
+
+;;Calcula valores de uma lista
+(foldr * 1 '(5 4 3 2 1))
+
+;;Quadrado de valores de uma lista
+(map sqr '(1 2 3))
+
+;;Somar o quadrado de todos os valores de uma lista
+(foldr + 0(map sqr '(2 4 5)))
+
+;;Filtra os valores baseados na tipagem
+(filter integer? '(1 "teste" 3 "funcional"))

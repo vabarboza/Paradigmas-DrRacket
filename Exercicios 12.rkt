@@ -18,7 +18,7 @@
 (distancia ponto1 ponto2)
 
 
-;; Defina uma funão que some todos os valores de uma sites, Se houver listas aninhadas, os valores dever ser somados.
+;; Defina uma funcão que some todos os valores de uma lista, Se houver listas aninhadas, os valores dever ser somados.
 (define (soma lista)
   (cond
     [(null? lista) 0]
@@ -29,3 +29,13 @@
 
 (soma (list 1 2 3))
 (soma (list 1 2 (list 1 (list 2 3 (list 4 6 8)))))
+
+
+
+(define (somas lista)
+  (cond
+    [(null? lista) 0]
+    [(list? (car lista))
+     (+ (soma car lista))]))
+
+(somas (list 4 5 6))
